@@ -23,8 +23,8 @@ def upgrade():
     stmt = f"""
     INSERT INTO student (id, name, created_at, active)  
     VALUES
-    ({1}, 'Marcus Aurelius', '{datetime.utcnow()}', {True}),
-    ({2}, 'Abraham Lincoln', '{datetime.utcnow()}', {True});
+    (DEFAULT, 'Marcus Aurelius', '{datetime.utcnow()}', {True}),
+    (DEFAULT, 'Abraham Lincoln', '{datetime.utcnow()}', {True});
     """
 
     conn.execute(stmt)
