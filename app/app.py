@@ -1,11 +1,13 @@
 from aiopg.sa import create_engine
 from core.core_app import AppSanic
 from core.logger_config import LOG_SETTINGS
+from sanic_openapi import openapi3_blueprint
 from routes import api
-from settings import DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_MAX_CONNECTIONS, DC_POOL_RECYCLE, APP_NAME
+from settings import DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DB_MAX_CONNECTIONS, DC_POOL_RECYCLE, APP_NAME, DEBUG
 
 
 def set_router(app: AppSanic):
+    app.blueprint(openapi3_blueprint)
     app.blueprint(api)
 
 
