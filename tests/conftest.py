@@ -4,6 +4,7 @@ import settings
 # Тут конфликт зависмостей Sanc 21.6 и pytest-sanic
 # Sanic требует websocket >=9, pytest-sanic 8.1
 # поэтому тесты пока не работаеют, до тех пор пока pytest-sanic не перейдет на новую версию websocket
+# https://github.com/yunstanford/pytest-sanic/issues/55
 
 
 @pytest.fixture(scope="session", autouse=True)
