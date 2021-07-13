@@ -20,20 +20,12 @@ depends_on = None
 def upgrade():
     conn = op.get_bind()
 
-    stmt = sa.insert(Student).values([
-        {
-            "id": 1,
-            "name": 'Marcus Aurelius',
-            "created_at": datetime.now(),
-            "active": True,
-        },
-        {
-            "id": 2,
-            "name": 'Abraham Lincoln',
-            "created_at": datetime.now(),
-            "active": True,
-        },
-    ])
+    stmt = f"""
+    INSERT INTO student (id, name, created_at, active)  
+    VALUES
+    ({1}, 'Marcus Aurelius', '{datetime.utcnow()}', {True}),
+    ({2}, 'Abraham Lincoln', '{datetime.utcnow()}', {True});
+    """
 
     conn.execute(stmt)
 

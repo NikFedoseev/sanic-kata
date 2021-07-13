@@ -18,8 +18,7 @@ depends_on = None
 
 
 def upgrade():
-    conn = op.get_bind()
-    op.add_column('student', sa.Column('updated_at', sa.DateTime, nullable=True))
+    pass
 
 
 def downgrade():
